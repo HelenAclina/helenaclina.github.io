@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helen Aclina · Governança de Dados, IA Generativa &amp; Análise de Dados</title>
+<meta name="description" content="Helen Aclina: estagiária em Governança de Dados e IA na DUX Company e estudante de Desenvolvimento de Software Multiplataforma na FATEC Mauá. Dados, automação, Python, SQL e IA Generativa.">
+<meta name="theme-color" content="#2F4156">
+<meta property="og:title" content="Helen Aclina · Governança de Dados · IA Generativa · Análise de Dados">
+<meta property="og:description" content="Estagiária em Governança de Dados e IA na DUX Company, estudante de DSM na FATEC Mauá. Dados, automação, Python, SQL e IA Generativa.">
+<meta property="og:url" content="https://helenaclina.github.io/">
+<meta property="og:image" content="https://helenaclina.github.io/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Helen Aclina, Dados e IA">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Helen Aclina · Governança de Dados, IA Generativa &amp; Análise de Dados">
+<meta name="twitter:description" content="Estagiária em Governança de Dados e IA na DUX Company, estudante de DSM na FATEC Mauá.">
+<meta name="twitter:image" content="https://helenaclina.github.io/assets/og-image.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232F4156'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='700' text-anchor='middle' fill='%23fff'%3EHA%3C/text%3E%3C/svg%3E">
+<script>
+/* Tema inicial (anti-FOUC) + flags de JS.
+   Adiciona 'js' e 'reveal-ready' antes do 1º paint (sem flash das animações)
+   e um failsafe que revela o conteúdo caso script.js não carregue. */
+(function () {
+  var d = document.documentElement;
+  d.classList.add('js', 'reveal-ready');
+  try {
+    var t = localStorage.getItem('ha-theme');
+    if (t !== 'dark' && t !== 'light') {
+      t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+    }
+    d.setAttribute('data-theme', t);
+  } catch (e) {
+    d.setAttribute('data-theme', 'light');
+  }
+  setTimeout(function () {
+    if (window.__haReveal !== true) d.classList.remove('reveal-ready');
+  }, 2200);
+})();
+</script>
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/script.js" defer></script>
+</head>
+<body>
+ protege o e-mail exibido como texto de ofuscação automática (Cloudflare). -->
+
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<!-- ========================= HEADER ========================= -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a class="logo" href="#top" aria-label="Helen Aclina, início">Helen Aclina<span class="dot" aria-hidden="true"></span></a>
+    <nav class="nav" id="nav" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#skills">Skills</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="header__cta">
+      <button class="theme-toggle" id="themeToggle" aria-label="Ativar tema escuro" title="Tema escuro">
+        <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+      </button>
+      <a class="btn btn--primary" href="#contato" aria-label="Ir para a seção de contato" title="Ir para a seção de contato">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 6.5l-10 7-10-7"/></svg>
+        Fale comigo
+      </a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <a href="#sobre">Sobre</a>
+  <a href="#skills">Skills</a>
+  <a href="#experiencia">Experiência</a>
+  <a href="#projetos">Projetos</a>
+  <a href="#depoimentos">Depoimentos</a>
+  <a href="#contato">Contato</a>
+  <div class="mobile-menu__foot">
+    <button type="button" class="pill pill--solid js-copy" data-copy-user="helenaclina" data-copy-host="gmail.com"><span class="js-copy-label em-addr" data-em-user="helenaclina" data-em-host="gmail.com"></span></button>
+    <a class="pill" href="https://www.linkedin.com/in/helenaclina" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="pill" href="https://www.instagram.com/helenaclina.tech/" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ========================= HERO ========================= -->
+  <section class="hero" id="top">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <h1 class="hero__title" data-reveal>
+          <span class="hero__line">Helen</span>
+          <span class="hero__line">Aclina<em>.</em><svg class="hero__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.1 7.9L22 12l-7.9 2.1L12 22l-2.1-7.9L2 12l7.9-2.1L12 2z"/></svg></span>
+          <span class="hero__script">Dados &amp; IA</span>
+        </h1>
+
+        <ul class="hero__roles" data-reveal>
+          <li><span class="pill">Data Governance</span></li>
+          <li><span class="pill">Data Analyst</span></li>
+          <li><span class="pill">Data Engineer</span></li>
+          <li><span class="pill pill--solid">Python &amp; SQL</span></li>
+        </ul>
+
+        <p class="hero__bio" data-reveal>
+          Estagiária em <strong>Governança de Dados e IA na DUX Company</strong> e estudante
+          de Desenvolvimento de Software Multiplataforma na FATEC Mauá. Experiência prática
+          desde 2025 com Qualidade de Dados (LGPD), automação de processos, Python/SQL e
+          Agentes de IA Generativa.
+        </p>
+
+        <div class="hero__meta" data-reveal>
+          <span class="hero__loc">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            São Paulo, SP · Brasil
+          </span>
+        </div>
+
+        <div class="hero__cta" data-reveal>
+          <div class="email-line email-line--hero">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 6.5l-10 7-10-7"/></svg>
+            <span class="email-line__addr em-addr" data-em-user="helenaclina" data-em-host="gmail.com"></span>
+            <button type="button" class="email-line__copy js-copy" data-copy-user="helenaclina" data-copy-host="gmail.com" aria-label="Copiar o e-mail"><span class="js-copy-label">Copiar</span></button>
+          </div>
+          <a class="btn btn--outline" href="https://www.linkedin.com/in/helenaclina" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn btn--outline" href="assets/curriculo-helen-aclina.pdf" download="Curriculo-Helen-Aclina.pdf" type="application/pdf" data-resume aria-label="Baixar o currículo de Helen Aclina em PDF" title="Baixar o currículo em PDF">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 21h16"/></svg>
+            Baixar currículo
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__visual" data-reveal>
+        <div class="portrait">
+          <span class="portrait__halo" aria-hidden="true"></span>
+          <span class="portrait__asterisk" aria-hidden="true">✳</span>
+          <img class="portrait__photo" src="assets/helen-aclina-cut.webp"
+               alt="Helen Aclina, de blazer preto e com um copo de café, recortada sobre o fundo"
+               width="685" height="949" decoding="async" fetchpriority="high">
+        </div>
+        <span class="float-badge float-badge--1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.4-2.9 7.4-7 9-4.1-1.6-7-4.6-7-9V6l7-3z"/></svg>
+          LGPD
+        </span>
+        <span class="float-badge float-badge--2">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.1 7.9L22 12l-7.9 2.1L12 22l-2.1-7.9L2 12l7.9-2.1L12 2z"/></svg>
+          GenAI
+        </span>
+        <span class="float-badge float-badge--3">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+          BigQuery
+        </span>
+        <span class="float-badge float-badge--4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+          Power BI
+        </span>
+      </div>
+    </div>
+
+    <div class="container hero__bar" data-reveal>
+      <p class="hero__handle">helenaclina.tech</p>
+      <div class="social-row">
+        <button type="button" class="icon-btn js-copy" data-copy-user="helenaclina" data-copy-host="gmail.com" aria-label="Copiar o e-mail" title="Copiar e-mail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 6.5l-10 7-10-7"/></svg>
+        </button>
+        <a class="icon-btn" href="https://www.linkedin.com/in/helenaclina" target="_blank" rel="noopener" aria-label="LinkedIn de Helen Aclina">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a class="icon-btn" href="https://www.instagram.com/helenaclina.tech/" target="_blank" rel="noopener" aria-label="Instagram de Helen Aclina">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85 0 3.2-.01 3.58-.07 4.85-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07-3.2 0-3.58-.01-4.85-.07-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85 0-3.2.01-3.58.07-4.85.15-3.23 1.66-4.77 4.92-4.92 1.27-.05 1.64-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12c0 3.26.01 3.67.07 4.95.2 4.36 2.62 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07 3.26 0 3.67-.01 4.95-.07 4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95 0-3.26-.01-3.67-.07-4.95-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm6.41-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+        </a>
+        <a class="icon-btn" href="https://github.com/HelenAclina" target="_blank" rel="noopener" aria-label="GitHub de Helen Aclina">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3c-6.6 0-12 5.4-12 12 0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6 0-.3-.1-1-.2-2-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 016 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2 0 1.6-.1 2.9-.1 3.3 0 .3.2.7.8.6A12 12 0 0024 12.3c0-6.6-5.4-12-12-12z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= QUEM SOU EU ========================= -->
+  <section class="about" id="sobre">
+    <div class="container">
+      <div class="about__grid">
+        <div class="panel panel--card" data-reveal>
+          <div class="sec-head">
+            <p class="eyebrow">
+              <svg class="sparkle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.1 7.9L22 12l-7.9 2.1L12 22l-2.1-7.9L2 12l7.9-2.1L12 2z"/></svg>
+              <span class="num">01</span> · Resultados &amp; Impacto
+            </p>
+            <h2 class="display">Quem<br><em>sou eu</em></h2>
+          </div>
+          <div class="about__intro">
+            <p>
+              Estudante de Desenvolvimento de Software Multiplataforma na <strong>FATEC Mauá</strong>
+              e Técnica em Desenvolvimento de Sistemas pela <strong>ETEC</strong>, com experiência
+              profissional em tecnologia, automação de processos e análise de dados.
+            </p>
+            <p>
+              Atualmente, atuo como estagiária em Governança de Dados e IA na
+              <strong>DUX Company</strong>, apoiando atividades relacionadas à qualidade e
+              documentação de dados, gestão de acessos, análise de informações e
+              desenvolvimento de soluções com Python, SQL e ferramentas de Inteligência
+              Artificial Generativa.
+            </p>
+            <p>
+              Minha trajetória combina conhecimentos em desenvolvimento de software, análise
+              de dados e automação, com interesse em aprofundar meus conhecimentos em
+              Governança de Dados, qualidade, políticas e procedimentos, além de aplicações
+              de IA. Busco ampliar minha experiência prática e contribuir para soluções que
+              promovam a confiabilidade dos dados, a eficiência operacional e o uso
+              responsável da tecnologia.
+            </p>
+          </div>
+
+          <div class="stats" aria-label="Estatísticas de carreira">
+            <div class="stat">
+              <div class="stat__num" data-count="1" data-suffix="+">1+</div>
+              <div class="stat__label">Ano de experiência</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num" data-count="3">3</div>
+              <div class="stat__label">Empresas</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num" data-count="6">6</div>
+              <div class="stat__label">Cursos e palestras</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num" data-count="4">4</div>
+              <div class="stat__label">Idiomas</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="impact" data-reveal>
+          <div class="impact__head">
+            <h3>Destaques<br>de impacto</h3>
+            <span class="tag">Key highlights</span>
+          </div>
+
+          <article class="impact-card">
+            <div class="impact-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.4-2.9 7.4-7 9-4.1-1.6-7-4.6-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <div>
+              <h4>Governança &amp; Segurança <span class="mini-tag">DUX Company</span></h4>
+              <p>Gestão de acessos, LGPD e confiabilidade em Power BI, Looker e BigQuery.</p>
+            </div>
+          </article>
+
+          <article class="impact-card">
+            <div class="impact-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="11" rx="3"/><circle cx="9.5" cy="13" r="1.2" fill="currentColor" stroke="none"/><circle cx="14.5" cy="13" r="1.2" fill="currentColor" stroke="none"/><path d="M12 8V5M12 3.5v.01M8 19v2M16 19v2"/></svg>
+            </div>
+            <div>
+              <h4>Agentes de IA Generativa <span class="mini-tag">Gemini Enterprise</span></h4>
+              <p>Desenvolvimento e validação de soluções inteligentes com Gemini Enterprise e Agent Builder.</p>
+            </div>
+          </article>
+
+          <article class="impact-card">
+            <div class="impact-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+            </div>
+            <div>
+              <h4>Suporte a Data Lakes <span class="mini-tag">Python &amp; SQL</span></h4>
+              <p>Ingestão, tratamento e documentação de dados via Python e SQL.</p>
+            </div>
+          </article>
+
+          <article class="impact-card">
+            <div class="impact-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+            </div>
+            <div>
+              <h4>Automações M365 <span class="mini-tag">Microsoft 365</span></h4>
+              <p>Criação de assistentes virtuais de IA e manutenção de dashboards.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= SKILLS ========================= -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="panel panel--white" data-reveal>
+        <div class="sec-head">
+          <p class="eyebrow">
+            <svg class="sparkle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.1 7.9L22 12l-7.9 2.1L12 22l-2.1-7.9L2 12l7.9-2.1L12 2z"/></svg>
+            <span class="num">02</span> · Qualificações &amp; Stack
+          </p>
+          <h2 class="display">Skills &amp; <em>Qualificações</em></h2>
+          <p class="lede">Tecnologias, áreas de atuação e certificações que sustentam projetos de dados,
+            IA e automação, do Data Lake ao agente inteligente.</p>
+        </div>
+
+        <div class="skill-block">
+          <p class="skill-block__title">Tecnologias &amp; Linguagens</p>
+          <div class="pill-wrap">
+            <span class="pill">Python</span>
+            <span class="pill">SQL</span>
+            <span class="pill">Google BigQuery</span>
+            <span class="pill">Power BI</span>
+            <span class="pill">Looker</span>
+            <span class="pill">Microsoft 365 / Power Platform</span>
+            <span class="pill">Flutter</span>
+          </div>
+        </div>
+
+        <div class="skill-block">
+          <p class="skill-block__title">Conceitos &amp; Áreas de Atuação</p>
+          <div class="pill-wrap">
+            <span class="pill pill--dark">Governança de Dados</span>
+            <span class="pill pill--dark">LGPD &amp; Privacidade</span>
+            <span class="pill pill--dark">IA Generativa &amp; Agentes Inteligentes</span>
+            <span class="pill pill--dark">Data Lakes</span>
+            <span class="pill pill--dark">Engenharia de Prompts</span>
+            <span class="pill pill--dark">MLOps</span>
+            <span class="pill pill--dark">Modelagem Dimensional</span>
+          </div>
+        </div>
+
+        <div class="skills__split">
+          <div class="subcard">
+            <div class="subcard__head">
+              <div class="ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12.5V17c0 1.66 2.69 3 6 3s6-1.34 6-3v-4.5"/><path d="M22 10v6"/></svg>
+              </div>
+              <h3>Formação Acadêmica</h3>
+            </div>
+            <div class="edu-list">
+              <div class="edu-item">
+                <h4>FATEC Mauá <span>· Tecnólogo em Desenvolvimento de Software Multiplataforma</span></h4>
+                <span class="period">2025 a 2028</span>
+              </div>
+              <div class="edu-item">
+                <h4>ETEC <span>· Ensino Técnico em Desenvolvimento de Sistemas</span></h4>
+                <span class="period">2025 a 2026</span>
+              </div>
+              <div class="edu-item">
+                <h4>FATEC São Caetano <span>· Segurança da Informação</span></h4>
+                <span class="period">2024 a 2025 · não concluído</span>
+              </div>
+              <div class="edu-item">
+                <h4>Espro <span>· Aprendizagem em Gestão, Atendimento e Qualidade (Tecnologia &amp; Gestão)</span></h4>
+                <span class="period">2025 a 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:clamp(18px,2.6vw,28px)">
+            <div class="subcard">
+              <div class="subcard__head">
+                <div class="ic" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5L7 22l5-3 5 3-1.5-7.5"/></svg>
+                </div>
+                <h3>Cursos, Palestras &amp; Imersão</h3>
+              </div>
+              <div class="cert-list">
+                <div class="cert-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5L7 22l5-3 5 3-1.5-7.5"/></svg>
+                  <div class="cert-item__body">
+                    <span class="cert-item__type">Cursos</span>
+                    <h4>Governança de dados: conceitos fundamentais &amp; privacidade/LGPD</h4>
+                  </div>
+                </div>
+                <div class="cert-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5L7 22l5-3 5 3-1.5-7.5"/></svg>
+                  <div class="cert-item__body">
+                    <span class="cert-item__type">Minicurso</span>
+                    <h4>Minicurso Aplicações e Automações com Power Platform</h4>
+                  </div>
+                </div>
+                <div class="cert-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5L7 22l5-3 5 3-1.5-7.5"/></svg>
+                  <div class="cert-item__body">
+                    <span class="cert-item__type">Minicurso</span>
+                    <h4>Minicurso Flutter (Um código, seis plataformas)</h4>
+                  </div>
+                </div>
+                <div class="cert-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5L7 22l5-3 5 3-1.5-7.5"/></svg>
+                  <div class="cert-item__body">
+                    <span class="cert-item__type">Palestra</span>
+                    <h4>Governança de dados: o novo petróleo da economia</h4>
+                    <span class="cert-item__meta">FATEC Mauá · Out/2026</span>
+                  </div>
+                </div>
+                <div class="cert-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5L7 22l5-3 5 3-1.5-7.5"/></svg>
+                  <div class="cert-item__body">
+                    <span class="cert-item__type">Palestra</span>
+                    <h4>KPI's: como gerenciar e monitorar empresas usando indicadores de
+                      desempenho setoriais e corporativos</h4>
+                    <span class="cert-item__meta">FATEC Mauá · Out/2026</span>
+                  </div>
+                </div>
+                <div class="cert-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5L7 22l5-3 5 3-1.5-7.5"/></svg>
+                  <div class="cert-item__body">
+                    <span class="cert-item__type">Imersão</span>
+                    <h4>ONE | Imersão Agentes de IA</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="subcard">
+              <div class="subcard__head">
+                <div class="ic" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
+                </div>
+                <h3>Idiomas</h3>
+              </div>
+              <div class="lang-list">
+                <div class="lang-row">
+                  <p class="lang-row__name">Português <span>· Nativo</span></p>
+                  <div class="dots" aria-label="Nível: nativo"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+                </div>
+                <div class="lang-row">
+                  <p class="lang-row__name">Inglês <span>· Profissional</span></p>
+                  <div class="dots" aria-label="Nível: profissional"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+                </div>
+                <div class="lang-row">
+                  <p class="lang-row__name">Espanhol <span>· Profissional</span></p>
+                  <div class="dots" aria-label="Nível: profissional"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+                </div>
+                <div class="lang-row">
+                  <p class="lang-row__name">Chinês <span>· Básico</span></p>
+                  <div class="dots" aria-label="Nível: básico"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= EXPERIÊNCIA ========================= -->
+  <section class="exp" id="experiencia">
+    <div class="container">
+      <div class="panel panel--card" data-reveal>
+        <div class="sec-head">
+          <p class="eyebrow">
+            <svg class="sparkle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.1 7.9L22 12l-7.9 2.1L12 22l-2.1-7.9L2 12l7.9-2.1L12 2z"/></svg>
+            <span class="num">03</span> · Trajetória Profissional
+          </p>
+          <h2 class="display">Experiência</h2>
+          <p class="lede">Uma jornada entre governança, engenharia e inteligência artificial,
+            construindo confiabilidade de dados e soluções que geram impacto real.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-item is-current" data-reveal>
+            <article class="tl-card">
+              <div class="tl-card__top">
+                <div class="tl-card__co">
+                  <div class="ic ic--dux"><img src="assets/logo-dux.webp" alt="Logo da DUX Company" width="52" height="52"></div>
+                  <div>
+                    <h3>DUX Company</h3>
+                    <p class="role">Estagiária de Governança de Dados e IA</p>
+                  </div>
+                </div>
+                <span class="period live">Set/2026 · Presente</span>
+              </div>
+              <p class="place">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                São Paulo, SP
+              </p>
+              <ul class="tl-list">
+                <li>Suporte à Governança de Dados: gestão de acessos e permissões em Power BI, Looker e BigQuery, com conformidade LGPD e confiabilidade das informações.</li>
+                <li>Desenvolvimento de scripts, protótipos, APIs e integrações em Python/SQL, automações e agentes de IA com Gemini Enterprise e Agent Builder.</li>
+                <li>Apoio ao Data Lake: ingestão, tratamento, documentação e disponibilização de dados, além de testes e validação de prompts, modelos e fluxos automatizados de IA.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="tl-item" data-reveal>
+            <article class="tl-card">
+              <div class="tl-card__top">
+                <div class="tl-card__co">
+                  <div class="ic ic--dxc"><img src="assets/logo-dxc.webp" alt="Logo da DXC Technology" width="52" height="52"></div>
+                  <div>
+                    <h3>DXC Technology</h3>
+                    <p class="role">Aprendiz · Girls In IT 8ª Edição</p>
+                  </div>
+                </div>
+                <span class="period">Fev/2025 a Jun/2026</span>
+              </div>
+              <p class="place">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                São Paulo, SP
+              </p>
+              <ul class="tl-list">
+                <li>Manutenção de dashboards em Power BI e suporte ao acompanhamento de indicadores da área.</li>
+                <li>Suporte a propostas comerciais no time de Sales (Bid Management e SOW) e criação de automações e agentes de IA no ecossistema Microsoft 365.</li>
+                <li>Organização de informações em SharePoint e portais internos, incluindo tradução de documentos institucionais para públicos internacionais.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="tl-item" data-reveal>
+            <article class="tl-card">
+              <div class="tl-card__top">
+                <div class="tl-card__co">
+                  <div class="ic ic--espro"><img src="assets/logo-espro.webp" alt="Logo do Espro" width="52" height="52"></div>
+                  <div>
+                    <h3>Espro</h3>
+                    <p class="role">Gestora do Departamento de Tecnologia · Empresa Júnior</p>
+                  </div>
+                </div>
+                <span class="period">Fev/2025 a Jun/2026</span>
+              </div>
+              <p class="place">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                São Bernardo do Campo, SP
+              </p>
+              <ul class="tl-list">
+                <li>Liderança de iniciativas de adoção de IA e tecnologias digitais para otimização de processos e produtividade da equipe.</li>
+                <li>Condução de dinâmicas e projetos internos de capacitação técnica, desenvolvendo competências do time.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= PROJETOS ========================= -->
+  <section class="projects" id="projetos">
+    <div class="container">
+      <div class="sec-head" data-reveal>
+        <p class="eyebrow">
+          <svg class="sparkle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.1 7.9L22 12l-7.9 2.1L12 22l-2.1-7.9L2 12l7.9-2.1L12 2z"/></svg>
+          <span class="num">04</span> · Case Studies &amp; Portfólio
+        </p>
+        <h2 class="display">Projetos &amp; <em>estudos de caso</em></h2>
+        <p class="lede">Espaço reservado para os próximos cases: arquitetura de dados, pipelines,
+          dashboards e agentes de IA em desenvolvimento. Fique atento, em breve por aqui.</p>
+        <a class="sec-head__link" href="https://github.com/HelenAclina" target="_blank" rel="noopener">
+          Enquanto isso, explore meu GitHub
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+
+      <div class="proj-grid">
+        <article class="proj-card" data-reveal>
+          <div class="proj-card__thumb t1">
+            <div class="mesh" aria-hidden="true"></div>
+            <div class="corner" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span class="soon">Em breve</span>
+            <div class="big-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+            </div>
+          </div>
+          <div class="proj-card__body">
+            <p class="proj-card__kicker">Projeto 01</p>
+            <h3>Em Breve</h3>
+            <p>Descrição do projeto, arquitetura de dados e resultados obtidos.</p>
+            <div class="proj-card__tags">
+              <span class="tag-mini">[Python]</span>
+              <span class="tag-mini">[BigQuery]</span>
+              <span class="tag-mini">[IA Agents]</span>
+            </div>
+            <span class="btn btn--disabled-safe" aria-disabled="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3c-6.6 0-12 5.4-12 12 0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6 0-.3-.1-1-.2-2-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 016 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2 0 1.6-.1 2.9-.1 3.3 0 .3.2.7.8.6A12 12 0 0024 12.3c0-6.6-5.4-12-12-12z"/></svg>
+              Ver no GitHub em breve
+            </span>
+          </div>
+        </article>
+
+        <article class="proj-card" data-reveal>
+          <div class="proj-card__thumb t2">
+            <div class="mesh" aria-hidden="true"></div>
+            <div class="corner" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span class="soon">Em breve</span>
+            <div class="big-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+            </div>
+          </div>
+          <div class="proj-card__body">
+            <p class="proj-card__kicker">Projeto 02</p>
+            <h3>Em Breve</h3>
+            <p>Descrição do projeto, arquitetura de dados e resultados obtidos.</p>
+            <div class="proj-card__tags">
+              <span class="tag-mini">[Power BI]</span>
+              <span class="tag-mini">[SQL]</span>
+              <span class="tag-mini">[Looker]</span>
+            </div>
+            <span class="btn btn--disabled-safe" aria-disabled="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3c-6.6 0-12 5.4-12 12 0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6 0-.3-.1-1-.2-2-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 016 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2 0 1.6-.1 2.9-.1 3.3 0 .3.2.7.8.6A12 12 0 0024 12.3c0-6.6-5.4-12-12-12z"/></svg>
+              Ver no GitHub em breve
+            </span>
+          </div>
+        </article>
+
+        <article class="proj-card" data-reveal>
+          <div class="proj-card__thumb t3">
+            <div class="mesh" aria-hidden="true"></div>
+            <div class="corner" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span class="soon">Em breve</span>
+            <div class="big-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="11" rx="3"/><circle cx="9.5" cy="13" r="1.2" fill="currentColor" stroke="none"/><circle cx="14.5" cy="13" r="1.2" fill="currentColor" stroke="none"/><path d="M12 8V5M12 3.5v.01M8 19v2M16 19v2"/></svg>
+            </div>
+          </div>
+          <div class="proj-card__body">
+            <p class="proj-card__kicker">Projeto 03</p>
+            <h3>Em Breve</h3>
+            <p>Descrição do projeto, arquitetura de dados e resultados obtidos.</p>
+            <div class="proj-card__tags">
+              <span class="tag-mini">[IA Agents]</span>
+              <span class="tag-mini">[Gemini]</span>
+              <span class="tag-mini">[Python]</span>
+            </div>
+            <span class="btn btn--disabled-safe" aria-disabled="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3c-6.6 0-12 5.4-12 12 0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6 0-.3-.1-1-.2-2-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 016 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2 0 1.6-.1 2.9-.1 3.3 0 .3.2.7.8.6A12 12 0 0024 12.3c0-6.6-5.4-12-12-12z"/></svg>
+              Ver no GitHub em breve
+            </span>
+          </div>
+        </article>
+
+        <article class="proj-card" data-reveal>
+          <div class="proj-card__thumb t4">
+            <div class="mesh" aria-hidden="true"></div>
+            <div class="corner" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span class="soon">Em breve</span>
+            <div class="big-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.4-2.9 7.4-7 9-4.1-1.6-7-4.6-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+          </div>
+          <div class="proj-card__body">
+            <p class="proj-card__kicker">Projeto 04</p>
+            <h3>Em Breve</h3>
+            <p>Descrição do projeto, arquitetura de dados e resultados obtidos.</p>
+            <div class="proj-card__tags">
+              <span class="tag-mini">[LGPD]</span>
+              <span class="tag-mini">[Governança]</span>
+              <span class="tag-mini">[BigQuery]</span>
+            </div>
+            <span class="btn btn--disabled-safe" aria-disabled="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3c-6.6 0-12 5.4-12 12 0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6 0-.3-.1-1-.2-2-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 016 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2 0 1.6-.1 2.9-.1 3.3 0 .3.2.7.8.6A12 12 0 0024 12.3c0-6.6-5.4-12-12-12z"/></svg>
+              Ver no GitHub em breve
+            </span>
+          </div>
+        </article>
+
+        <article class="proj-card" data-reveal>
+          <div class="proj-card__thumb t5">
+            <div class="mesh" aria-hidden="true"></div>
+            <div class="corner" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span class="soon">Em breve</span>
+            <div class="big-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+            </div>
+          </div>
+          <div class="proj-card__body">
+            <p class="proj-card__kicker">Projeto 05</p>
+            <h3>Em Breve</h3>
+            <p>Descrição do projeto, arquitetura de dados e resultados obtidos.</p>
+            <div class="proj-card__tags">
+              <span class="tag-mini">[Power Platform]</span>
+              <span class="tag-mini">[M365]</span>
+              <span class="tag-mini">[Automação]</span>
+            </div>
+            <span class="btn btn--disabled-safe" aria-disabled="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3c-6.6 0-12 5.4-12 12 0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6 0-.3-.1-1-.2-2-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 016 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2 0 1.6-.1 2.9-.1 3.3 0 .3.2.7.8.6A12 12 0 0024 12.3c0-6.6-5.4-12-12-12z"/></svg>
+              Ver no GitHub em breve
+            </span>
+          </div>
+        </article>
+
+        <article class="proj-card" data-reveal>
+          <div class="proj-card__thumb t6">
+            <div class="mesh" aria-hidden="true"></div>
+            <div class="corner" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span class="soon">Em breve</span>
+            <div class="big-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9L12 2z"/><path d="M12 11l8-4.5M12 11v9M12 11L4 6.5"/></svg>
+            </div>
+          </div>
+          <div class="proj-card__body">
+            <p class="proj-card__kicker">Projeto 06</p>
+            <h3>Em Breve</h3>
+            <p>Descrição do projeto, arquitetura de dados e resultados obtidos.</p>
+            <div class="proj-card__tags">
+              <span class="tag-mini">[Flutter]</span>
+              <span class="tag-mini">[Python]</span>
+              <span class="tag-mini">[APIs]</span>
+            </div>
+            <span class="btn btn--disabled-safe" aria-disabled="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3c-6.6 0-12 5.4-12 12 0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6 0-.3-.1-1-.2-2-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 016 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2 0 1.6-.1 2.9-.1 3.3 0 .3.2.7.8.6A12 12 0 0024 12.3c0-6.6-5.4-12-12-12z"/></svg>
+              Ver no GitHub em breve
+            </span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= DEPOIMENTOS ========================= -->
+  <section class="testimonials" id="depoimentos">
+    <div class="container">
+      <div class="sec-head" data-reveal>
+        <p class="eyebrow">
+          <svg class="sparkle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.1 7.9L22 12l-7.9 2.1L12 22l-2.1-7.9L2 12l7.9-2.1L12 2z"/></svg>
+          <span class="num">05</span> · Recomendações
+        </p>
+        <h2 class="display">Depoimentos &amp; <em>recomendações</em></h2>
+        <p class="lede">Recomendações de quem acompanhou de perto minha trajetória em
+          tecnologia, dados, liderança e desenvolvimento de software.</p>
+      </div>
+
+      <article class="tst-feature" data-reveal>
+        <div class="tst-feature__aside">
+          <p class="tst-feature__kicker">Recomendação em destaque <span>LinkedIn</span></p>
+          <div class="tst-feature__author">
+            <img class="tst-feature__photo" src="assets/rodrigo-picchi.webp" width="58" height="58" alt="Foto de Rodrigo Jose Picchi">
+            <div>
+              <strong>Rodrigo Jose Picchi</strong>
+              <span>Manager of IT Operations, Team Leader &amp; Talent Transformation at DXC Technology</span>
+            </div>
+          </div>
+          <p class="tst-feature__relation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            <span>14 de agosto de 2026<br>Rodrigo supervisionava Helen diretamente</span>
+          </p>
+          <span class="tst-feature__quote-mark" aria-hidden="true">&ldquo;</span>
+        </div>
+        <div class="tst-feature__body">
+          <div class="tst-feature__text">
+            <p>Tive o prazer de trabalhar com a Helen e posso afirmar que ela é uma profissional
+              <strong>extremamente dedicada, competente</strong> e sempre disposta a aprender e se desenvolver.</p>
+            <p>Ao longo do tempo em que trabalhamos juntos, Helen se destacou por sua atitude proativa,
+              excelente organização e constante preocupação com a qualidade das entregas. Além disso,
+              possui grande facilidade para trabalhar em equipe, construindo relacionamentos positivos
+              e contribuindo para um ambiente colaborativo e produtivo.</p>
+            <p>Outro ponto que merece destaque é a sua capacidade de liderança. Helen demonstra iniciativa,
+              senso de responsabilidade e habilidade para engajar pessoas na busca por objetivos comuns,
+              sempre mantendo uma comunicação clara, objetiva e respeitosa.</p>
+            <p>Sua combinação de competência técnica, vontade de aprender, organização e excelentes
+              habilidades interpessoais faz dela uma profissional de grande valor para qualquer equipe
+              ou organização.</p>
+            <p class="tst-feature__closing">Foi uma excelente experiência trabalhar ao seu lado e recomendo
+              Helen com total confiança.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="tst-feature" data-reveal>
+        <div class="tst-feature__aside">
+          <p class="tst-feature__kicker">Recomendação <span>LinkedIn</span></p>
+          <div class="tst-feature__author">
+            <img class="tst-feature__photo" src="assets/joao-vitor-silva.webp" width="58" height="58" alt="Foto de Joao Vitor Silva">
+            <div>
+              <strong>Joao Vitor Silva</strong>
+              <span>Desenvolvedor Fullstack | .NET 8 • C# • Angular • Python • SQL Server | Automation • APIs REST • AWS | Pipelines de Dados • IA • WebGIS | FATEC Mauá</span>
+            </div>
+          </div>
+          <p class="tst-feature__relation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            <span>28 de outubro de 2026<br>Joao Vitor e Helen estudaram juntos</span>
+          </p>
+          <span class="tst-feature__quote-mark" aria-hidden="true">&ldquo;</span>
+        </div>
+        <div class="tst-feature__body">
+          <div class="tst-feature__text">
+            <p>Tive a oportunidade de estudar com a Helen Aclina na faculdade e, nesse período,
+              pude perceber o quanto ela é <strong>dedicada, organizada e comprometida</strong> com
+              o que faz. É uma pessoa que gosta de entender como as coisas funcionam, buscar
+              soluções e colaborar com as pessoas ao seu redor.</p>
+            <p>Acredito que seu interesse por governança de dados e gestão de projetos combina muito
+              com essas características, pois são áreas que exigem responsabilidade, visão analítica
+              e boa comunicação.</p>
+            <p class="tst-feature__closing">Tenho certeza de que ela tem muito a contribuir em sua
+              trajetória profissional e desejo muito sucesso nos próximos passos da sua carreira.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="tst-feature tst-feature--alt" data-reveal>
+        <div class="tst-feature__aside">
+          <p class="tst-feature__kicker">Recomendação <span>LinkedIn</span></p>
+          <div class="tst-feature__author">
+            <img class="tst-feature__photo" src="assets/gabriel-wagner.webp" width="58" height="58" alt="Foto de Gabriel Wagner">
+            <div>
+              <strong>Gabriel Wagner</strong>
+              <span>Assistente de TI · Nipel Ind.</span>
+            </div>
+          </div>
+          <p class="tst-feature__relation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            <span>27 de outubro de 2026<br>Gabriel e Helen estudaram juntos</span>
+          </p>
+          <span class="tst-feature__quote-mark" aria-hidden="true">&ldquo;</span>
+        </div>
+        <div class="tst-feature__body">
+          <div class="tst-feature__text">
+            <p>Helen é um exemplo de uma <strong>excelente profissional e estudante</strong>,
+              se empenha e se esforça ao máximo para sempre estar aprendendo e aplicando seus
+              conhecimentos na sua vida acadêmica ou no trabalho de forma eficiente e efetiva.</p>
+            <p>Desenvolvendo projetos desde o início da faculdade, ela adotou uma postura de
+              liderança que se mantém até hoje pelo seu ótimo trabalho, que me faz dar mais valor
+              as normas, metodologias e detalhes que normalmente são despercebidos por muitos
+              desenvolvedores.</p>
+            <p class="tst-feature__closing">Seu empenho é algo inspirador para qualquer
+              profissional se basear, seja ele da área de tecnologia ou não.</p>
+          </div>
+        </div>
+      </article>
+
+      <div class="tst-grid tst-grid--one">
+        <article class="tst-card tst-card--invite" data-reveal>
+          <p class="tst-card__kicker">Sua recomendação</p>
+          <p class="tst-card__quote">
+            Trabalhou comigo, foi meu líder ou estudou ao meu lado? Uma recomendação
+            no LinkedIn ajuda a contar essa trajetória para quem está conhecendo
+            meu trabalho agora.
+          </p>
+          <footer class="tst-card__author">
+            <div class="avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            </div>
+            <div>
+              <strong>Deixe sua recomendação</strong>
+              <span>Leva menos de dois minutos</span>
+            </div>
+          </footer>
+          <a class="btn btn--outline tst-card__cta" href="https://www.linkedin.com/in/helenaclina" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            Recomendar no LinkedIn
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= CONTATO ========================= -->
+  <section class="contact" id="contato">
+    <div class="container">
+      <div class="contact__panel" data-reveal>
+        <div class="contact__inner">
+          <p class="eyebrow">
+            <svg class="sparkle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.1 7.9L22 12l-7.9 2.1L12 22l-2.1-7.9L2 12l7.9-2.1L12 2z"/></svg>
+            <span class="num" style="color:rgba(255,255,255,.65)">06</span> · Vamos nos conectar
+          </p>
+          <h2 class="display">Vamos <em>conversar</em>?</h2>
+          <span class="contact__script">vamos criar algo</span>
+          <p class="contact__text">
+            Aberta a oportunidades e colaborações em Governança de Dados, Inteligência
+            Artificial, Desenvolvimento de Software e Automação de Processos, com foco em
+            Qualidade de Dados (LGPD) e Agentes de IA Generativa. Me chame por onde
+            preferir.
+          </p>
+          <div class="contact__actions">
+            <div class="email-line email-line--contact">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 6.5l-10 7-10-7"/></svg>
+              <span class="email-line__addr em-addr" data-em-user="helenaclina" data-em-host="gmail.com"></span>
+              <button type="button" class="email-line__copy js-copy" data-copy-user="helenaclina" data-copy-host="gmail.com" aria-label="Copiar o e-mail"><span class="js-copy-label">Copiar</span></button>
+            </div>
+            <a class="btn btn--ghost-light" href="assets/curriculo-helen-aclina.pdf" download="Curriculo-Helen-Aclina.pdf" type="application/pdf" data-resume aria-label="Baixar o currículo de Helen Aclina em PDF" title="Baixar o currículo em PDF">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 21h16"/></svg>
+              Baixar currículo
+            </a>
+            <a class="btn btn--ghost-light" href="https://www.linkedin.com/in/helenaclina" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn
+            </a>
+            <a class="btn btn--ghost-light" href="https://www.instagram.com/helenaclina.tech/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85 0 3.2-.01 3.58-.07 4.85-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07-3.2 0-3.58-.01-4.85-.07-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85 0-3.2.01-3.58.07-4.85.15-3.23 1.66-4.77 4.92-4.92 1.27-.05 1.64-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12c0 3.26.01 3.67.07 4.95.2 4.36 2.62 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07 3.26 0 3.67-.01 4.95-.07 4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95 0-3.26-.01-3.67-.07-4.95-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm6.41-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+              Instagram
+            </a>
+            <a class="btn btn--ghost-light" href="https://github.com/HelenAclina" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3c-6.6 0-12 5.4-12 12 0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6 0-.3-.1-1-.2-2-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 016 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2 0 1.6-.1 2.9-.1 3.3 0 .3.2.7.8.6A12 12 0 0024 12.3c0-6.6-5.4-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ========================= FOOTER ========================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="logo" href="#top">Helen Aclina<span class="dot" aria-hidden="true"></span></a>
+        <small>Governança de Dados · IA Generativa · Automação de Processos · Análise de Dados</small>
+      </div>
+      <div class="footer__links">
+        <button type="button" class="footer__chip js-copy" data-copy-user="helenaclina" data-copy-host="gmail.com" aria-label="Copiar o e-mail" title="Copiar e-mail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 6.5l-10 7-10-7"/></svg>
+          <span class="js-copy-label em-addr" data-em-user="helenaclina" data-em-host="gmail.com"></span>
+        </button>
+        <a class="footer__chip" href="https://www.linkedin.com/in/helenaclina" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+        <a class="footer__chip" href="https://www.instagram.com/helenaclina.tech/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85 0 3.2-.01 3.58-.07 4.85-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07-3.2 0-3.58-.01-4.85-.07-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85 0-3.2.01-3.58.07-4.85.15-3.23 1.66-4.77 4.92-4.92 1.27-.05 1.64-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12c0 3.26.01 3.67.07 4.95.2 4.36 2.62 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07 3.26 0 3.67-.01 4.95-.07 4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95 0-3.26-.01-3.67-.07-4.95-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm6.41-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+          Instagram
+        </a>
+        <a class="footer__chip" href="https://github.com/HelenAclina" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3c-6.6 0-12 5.4-12 12 0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6 0-.3-.1-1-.2-2-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 016 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2 0 1.6-.1 2.9-.1 3.3 0 .3.2.7.8.6A12 12 0 0024 12.3c0-6.6-5.4-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a class="footer__chip" href="assets/curriculo-helen-aclina.pdf" download="Curriculo-Helen-Aclina.pdf" type="application/pdf" data-resume aria-label="Baixar o currículo de Helen Aclina em PDF">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 21h16"/></svg>
+          Currículo
+        </a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span id="year">2026</span> Helen Aclina · São Paulo, SP · Brasil</p>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- Cartão de contato: fallback para visualizadores que bloqueiam links externos -->
+<div class="contact-fallback" id="contactFallback" hidden>
+  <div class="contact-fallback__backdrop" data-cf-close></div>
+  <div class="contact-fallback__card" role="dialog" aria-modal="true" aria-labelledby="contactFallbackTitle">
+    <button class="contact-fallback__close" type="button" data-cf-close aria-label="Fechar cartão de contato">&times;</button>
+    <p class="contact-fallback__kicker">Vamos nos conectar</p>
+    <h2 class="contact-fallback__title" id="contactFallbackTitle">Fale <em>comigo</em></h2>
+    <ul class="contact-fallback__list">
+      <li class="contact-fallback__item" data-cf-item="instagram">
+        <span class="contact-fallback__label">Instagram</span>
+        <span class="contact-fallback__value">instagram.com/helenaclina.tech</span>
+        <div class="contact-fallback__actions">
+          <button type="button" class="contact-fallback__copy" data-cf-copy="https://www.instagram.com/helenaclina.tech/">Copiar</button>
+          <a class="contact-fallback__open" href="https://www.instagram.com/helenaclina.tech/" target="_blank" rel="noopener">Abrir &#8599;</a>
+        </div>
+      </li>
+      <li class="contact-fallback__item" data-cf-item="email">
+        <span class="contact-fallback__label">E-mail</span>
+        <span class="contact-fallback__value em-addr" data-em-user="helenaclina" data-em-host="gmail.com"></span>
+        <div class="contact-fallback__actions">
+          <button type="button" class="contact-fallback__copy" data-cf-copy-user="helenaclina" data-cf-copy-host="gmail.com">Copiar</button>
+        </div>
+      </li>
+      <li class="contact-fallback__item" data-cf-item="linkedin">
+        <span class="contact-fallback__label">LinkedIn</span>
+        <span class="contact-fallback__value">linkedin.com/in/helenaclina</span>
+        <div class="contact-fallback__actions">
+          <button type="button" class="contact-fallback__copy" data-cf-copy="https://www.linkedin.com/in/helenaclina">Copiar</button>
+          <a class="contact-fallback__open" href="https://www.linkedin.com/in/helenaclina" target="_blank" rel="noopener">Abrir &#8599;</a>
+        </div>
+      </li>
+      <li class="contact-fallback__item" data-cf-item="github">
+        <span class="contact-fallback__label">GitHub</span>
+        <span class="contact-fallback__value">github.com/HelenAclina</span>
+        <div class="contact-fallback__actions">
+          <button type="button" class="contact-fallback__copy" data-cf-copy="https://github.com/HelenAclina">Copiar</button>
+          <a class="contact-fallback__open" href="https://github.com/HelenAclina" target="_blank" rel="noopener">Abrir &#8599;</a>
+        </div>
+      </li>
+      <li class="contact-fallback__item" data-cf-item="resume">
+        <span class="contact-fallback__label">Currículo em PDF</span>
+        <span class="contact-fallback__value">Currículo Helen Aclina · 3 páginas</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a51caa015c4ea3f9',t:'MTc5MzIxOTA2Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
